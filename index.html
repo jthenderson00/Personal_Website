@@ -6,6 +6,11 @@
     <title>Jay Henderson - IT Infrastructure & Automation Specialist</title>
     <meta name="description" content="IT Infrastructure & Automation Specialist specializing in Linux, virtualization, ZFS storage, and Python automation. Proven track record of reducing downtime by 35%.">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="alternate icon" href="/favicon.ico">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -486,6 +491,559 @@
         </div>
     </section>
 
+    <!-- Live Demo Mockups -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-gray-900">Live Demo Mockups</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Dashboard Demo Button -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-8 shadow-md text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-blue-600">Community Dashboard</h3>
+                    <p class="text-gray-700 mb-6">
+                        Experience a simulated community dashboard interface showcasing responsive navigation and system monitoring capabilities.
+                    </p>
+                    <button id="launch-dashboard-demo" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-200 shadow-lg">
+                        Launch Demo
+                    </button>
+                </div>
+
+                <!-- React Site Demo Button -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-8 shadow-md text-center">
+                    <h3 class="text-2xl font-bold mb-4 text-red-600">Laced in Lust React Components</h3>
+                    <p class="text-gray-700 mb-6">
+                        Explore reusable React components for the VRChat nightclub platform, featuring dynamic staff cards, hero sections, and modern React development principles.
+                    </p>
+                    <button id="launch-react-demo" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-lg transition duration-200 shadow-lg">
+                        Launch Demo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal: Dashboard Demo -->
+    <div id="dashboard-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 rounded-lg max-w-7xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-gray-700">
+            <!-- Modal Header -->
+            <div class="bg-gray-800 border-b border-gray-700 text-white px-6 py-4 flex justify-between items-center">
+                <h3 class="text-2xl font-bold">Community Dashboard Interface Simulation</h3>
+                <button id="close-dashboard-modal" class="text-white hover:text-gray-300 text-3xl font-bold leading-none">&times;</button>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="flex-1 flex overflow-hidden bg-gray-900">
+                <!-- Sidebar Navigation -->
+                <aside class="bg-gray-800 text-white w-64 flex-shrink-0 overflow-y-auto border-r border-gray-700">
+                    <nav class="p-4 space-y-2">
+                        <div class="dashboard-nav-item py-2 px-4 bg-blue-600 rounded-lg font-semibold cursor-pointer" data-tab="dashboard">Dashboard</div>
+                        <div class="dashboard-nav-item py-2 px-4 hover:bg-gray-700 rounded-lg cursor-pointer" data-tab="lineup">Lineup Builder</div>
+                        <div class="dashboard-nav-item py-2 px-4 hover:bg-gray-700 rounded-lg cursor-pointer" data-tab="attendees">Attendees</div>
+                        <div class="dashboard-nav-item py-2 px-4 hover:bg-gray-700 rounded-lg cursor-pointer" data-tab="events">Live Events</div>
+                        <div class="dashboard-nav-item py-2 px-4 hover:bg-gray-700 rounded-lg cursor-pointer" data-tab="applications">Applications</div>
+                        <div class="dashboard-nav-item py-2 px-4 hover:bg-gray-700 rounded-lg cursor-pointer" data-tab="analytics">Analytics</div>
+                        <div class="dashboard-nav-item py-2 px-4 hover:bg-gray-700 rounded-lg cursor-pointer" data-tab="staff">Staff Management</div>
+                    </nav>
+                </aside>
+                
+                <!-- Main Content Area -->
+                <main class="flex-1 overflow-y-auto bg-gray-900 p-6">
+                    <!-- Dashboard Content -->
+                    <div class="dashboard-content max-w-5xl" data-content="dashboard">
+                        <h4 class="text-2xl font-bold mb-6 text-white">Event Lineup & Attendee Management</h4>
+                        
+                        <!-- Event Lineup Section -->
+                        <div class="bg-gray-800 rounded-lg p-6 mb-6 border border-gray-700">
+                            <div class="flex justify-between items-center mb-4">
+                                <h5 class="text-xl font-semibold text-white">Tonight's Lineup</h5>
+                                <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">8:00 PM EST</span>
+                            </div>
+                            
+                            <!-- Lineup Slots -->
+                            <div class="space-y-2">
+                                <div class="bg-gray-700 rounded-lg p-4 flex items-center gap-4 border-l-4 border-yellow-500">
+                                    <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-gray-900 font-bold">1</div>
+                                    <div class="flex-1">
+                                        <p class="text-white font-semibold">Sarah Martinez</p>
+                                        <p class="text-gray-400 text-sm">Solo Performance</p>
+                                    </div>
+                                    <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Pending</span>
+                                </div>
+                                
+                                <div class="bg-gray-700 rounded-lg p-4 flex items-center gap-4 border-l-4 border-purple-500">
+                                    <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold">—</div>
+                                    <div class="flex-1">
+                                        <p class="text-white font-semibold">Intermission</p>
+                                        <p class="text-gray-400 text-sm">15 minute break</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-700 rounded-lg p-4 flex items-center gap-4 border-l-4 border-yellow-500">
+                                    <div class="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center text-gray-900 font-bold">2</div>
+                                    <div class="flex-1">
+                                        <p class="text-white font-semibold">Alex Johnson</p>
+                                        <p class="text-gray-400 text-sm">Duet Performance</p>
+                                    </div>
+                                    <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Pending</span>
+                                </div>
+                                
+                                <div class="bg-gray-700 rounded-lg p-4 flex items-center gap-4 border-l-4 border-green-500 opacity-60">
+                                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold">✓</div>
+                                    <div class="flex-1">
+                                        <p class="text-white font-semibold line-through">Jamie Lee</p>
+                                        <p class="text-gray-400 text-sm line-through">Completed</p>
+                                    </div>
+                                    <span class="bg-gray-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Done</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Attendee Statistics -->
+                        <div class="grid md:grid-cols-4 gap-4 mb-6">
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
+                                <h6 class="text-3xl font-bold text-white mb-1">142</h6>
+                                <p class="text-gray-400 text-sm">Total Attendees</p>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
+                                <h6 class="text-3xl font-bold text-yellow-400 mb-1">23</h6>
+                                <p class="text-gray-400 text-sm">VIP Members</p>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
+                                <h6 class="text-3xl font-bold text-green-400 mb-1">89</h6>
+                                <p class="text-gray-400 text-sm">Online Now</p>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
+                                <h6 class="text-3xl font-bold text-blue-400 mb-1">12</h6>
+                                <p class="text-gray-400 text-sm">Fresh Meat</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Attendees -->
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                            <h5 class="text-xl font-semibold text-white mb-4">Recent Attendees</h5>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between py-3 border-b border-gray-700">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">CM</div>
+                                        <div>
+                                            <p class="text-white font-medium">Cassandra Moon</p>
+                                            <p class="text-gray-400 text-sm">Last attended: 2 days ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">VIP</span>
+                                        <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Active</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between py-3 border-b border-gray-700">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">JR</div>
+                                        <div>
+                                            <p class="text-white font-medium">Jordan Rivera</p>
+                                            <p class="text-gray-400 text-sm">Last attended: 5 days ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">Regular</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between py-3 border-b border-gray-700">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white font-semibold">TK</div>
+                                        <div>
+                                            <p class="text-white font-medium">Taylor Kim</p>
+                                            <p class="text-gray-400 text-sm">Last attended: 1 week ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">Fresh</span>
+                                        <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Watchlist</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="mt-6 text-sm text-gray-400 italic">
+                            This simulation demonstrates the web dashboard's lineup management and attendee tracking capabilities. Features include real-time event coordination, attendee status monitoring, and comprehensive data visualization for community management.
+                        </p>
+                    </div>
+                    
+                    <!-- Lineup Builder Content -->
+                    <div class="dashboard-content max-w-5xl hidden" data-content="lineup">
+                        <h4 class="text-2xl font-bold mb-6 text-white">Lineup Builder</h4>
+                        <div class="bg-gray-800 rounded-lg p-6 mb-6 border border-gray-700">
+                            <h5 class="text-xl font-semibold text-white mb-4">Build Event Lineup</h5>
+                            <div class="space-y-4">
+                                <div class="bg-gray-700 rounded-lg p-4 border-l-4 border-blue-500">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-white font-semibold">Add Dancer Slot</p>
+                                            <p class="text-gray-400 text-sm">Drag and drop to reorder lineup positions</p>
+                                        </div>
+                                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm">Add Slot</button>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-700 rounded-lg p-4 border-l-4 border-purple-500">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-white font-semibold">Add Intermission</p>
+                                            <p class="text-gray-400 text-sm">Insert breaks between performances</p>
+                                        </div>
+                                        <button class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm">Add Break</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                            <h5 class="text-xl font-semibold text-white mb-4">Current Lineup Slots</h5>
+                            <p class="text-gray-400">3 slots configured • 2 pending • 1 completed</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Attendees Content -->
+                    <div class="dashboard-content max-w-5xl hidden" data-content="attendees">
+                        <h4 class="text-2xl font-bold mb-6 text-white">Attendee Management</h4>
+                        <div class="grid md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                                <h6 class="text-2xl font-bold text-white mb-1">142</h6>
+                                <p class="text-gray-400 text-sm">Total Attendees</p>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                                <h6 class="text-2xl font-bold text-yellow-400 mb-1">23</h6>
+                                <p class="text-gray-400 text-sm">VIP Members</p>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                                <h6 class="text-2xl font-bold text-green-400 mb-1">89</h6>
+                                <p class="text-gray-400 text-sm">Online Now</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                            <div class="flex justify-between items-center mb-4">
+                                <h5 class="text-xl font-semibold text-white">Attendee List</h5>
+                                <input type="text" placeholder="Search attendees..." class="bg-gray-700 text-white px-4 py-2 rounded-lg border border-gray-600">
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between py-3 border-b border-gray-700">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">CM</div>
+                                        <div>
+                                            <p class="text-white font-medium">Cassandra Moon</p>
+                                            <p class="text-gray-400 text-sm">Member since: Jan 2024</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">VIP</span>
+                                        <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Active</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between py-3 border-b border-gray-700">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center text-white font-semibold">JR</div>
+                                        <div>
+                                            <p class="text-white font-medium">Jordan Rivera</p>
+                                            <p class="text-gray-400 text-sm">Member since: Mar 2024</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-gray-600 text-white px-2 py-1 rounded text-xs">Regular</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Events Content -->
+                    <div class="dashboard-content max-w-5xl hidden" data-content="events">
+                        <h4 class="text-2xl font-bold mb-6 text-white">Live Events</h4>
+                        <div class="bg-gray-800 rounded-lg p-6 mb-6 border border-gray-700">
+                            <div class="flex justify-between items-center mb-4">
+                                <h5 class="text-xl font-semibold text-white">Active Event</h5>
+                                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">LIVE</span>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="text-white font-semibold text-lg">Saturday Night Showcase</p>
+                                    <p class="text-gray-400">8:00 PM EST • 89 attendees registered</p>
+                                </div>
+                                <div class="flex gap-3">
+                                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg">View Details</button>
+                                    <button class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg">Manage Event</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                            <h5 class="text-xl font-semibold text-white mb-4">Upcoming Events</h5>
+                            <div class="space-y-3">
+                                <div class="bg-gray-700 rounded-lg p-4">
+                                    <p class="text-white font-semibold">Friday Night Mix</p>
+                                    <p class="text-gray-400 text-sm">Nov 8, 2024 • 7:00 PM EST</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Applications Content -->
+                    <div class="dashboard-content max-w-5xl hidden" data-content="applications">
+                        <h4 class="text-2xl font-bold mb-6 text-white">Application Review</h4>
+                        <div class="grid md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
+                                <h6 class="text-2xl font-bold text-yellow-400 mb-1">5</h6>
+                                <p class="text-gray-400 text-sm">Pending Review</p>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
+                                <h6 class="text-2xl font-bold text-green-400 mb-1">12</h6>
+                                <p class="text-gray-400 text-sm">Approved This Week</p>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-4 border border-gray-700 text-center">
+                                <h6 class="text-2xl font-bold text-red-400 mb-1">2</h6>
+                                <p class="text-gray-400 text-sm">Rejected</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                            <h5 class="text-xl font-semibold text-white mb-4">Pending Applications</h5>
+                            <div class="space-y-3">
+                                <div class="bg-gray-700 rounded-lg p-4 border-l-4 border-yellow-500">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-white font-semibold">Alex Chen</p>
+                                            <p class="text-gray-400 text-sm">Applied 2 days ago</p>
+                                        </div>
+                                        <div class="flex gap-2">
+                                            <button class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded text-sm">Approve</button>
+                                            <button class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm">Reject</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Analytics Content -->
+                    <div class="dashboard-content max-w-5xl hidden" data-content="analytics">
+                        <h4 class="text-2xl font-bold mb-6 text-white">Analytics & Statistics</h4>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                                <h5 class="text-lg font-semibold text-white mb-4">Event Attendance</h5>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-400">This Month</span>
+                                        <span class="text-white font-semibold">342 attendees</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-400">Last Month</span>
+                                        <span class="text-white font-semibold">298 attendees</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-400">Growth</span>
+                                        <span class="text-green-400 font-semibold">+14.8%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-gray-800 rounded-lg p-6 border border-gray-700">
+                                <h5 class="text-lg font-semibold text-white mb-4">User Engagement</h5>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-400">Active Users</span>
+                                        <span class="text-white font-semibold">89</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-400">VIP Members</span>
+                                        <span class="text-yellow-400 font-semibold">23</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-400">Retention Rate</span>
+                                        <span class="text-green-400 font-semibold">87%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Staff Management Content -->
+                    <div class="dashboard-content max-w-5xl hidden" data-content="staff">
+                        <h4 class="text-2xl font-bold mb-6 text-white">Staff Management</h4>
+                        <div class="bg-gray-800 rounded-lg p-6 mb-6 border border-gray-700">
+                            <div class="flex justify-between items-center mb-4">
+                                <h5 class="text-xl font-semibold text-white">Staff Members</h5>
+                                <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm">Add Staff</button>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-gray-700 rounded-lg p-4">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white font-semibold">SM</div>
+                                        <div>
+                                            <p class="text-white font-semibold">Sarah Martinez</p>
+                                            <p class="text-gray-400 text-sm">Head Dancer</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Active</span>
+                                        <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">VIP</span>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-700 rounded-lg p-4">
+                                    <div class="flex items-center gap-3 mb-2">
+                                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">AJ</div>
+                                        <div>
+                                            <p class="text-white font-semibold">Alex Johnson</p>
+                                            <p class="text-gray-400 text-sm">Dancer</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Active</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: React Site Demo -->
+    <div id="react-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-gray-900 rounded-lg max-w-5xl w-full max-h-[90vh] overflow-hidden flex flex-col border border-gray-700">
+            <!-- Modal Header -->
+            <div class="bg-black/40 backdrop-blur-xl border-b border-red-600/30 text-white px-6 py-4 flex justify-between items-center">
+                <h3 class="text-2xl font-bold">Laced in Lust: React Component Structure</h3>
+                <button id="close-react-modal" class="text-white hover:text-gray-300 text-3xl font-bold leading-none">&times;</button>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="flex-1 overflow-y-auto bg-gradient-to-b from-gray-900 via-gray-900 to-black p-8">
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        This demonstrates a reusable React component structure for the Laced in Lust nightclub website. The component follows React principles including props handling, state management, and dynamic data rendering for a modern VRChat nightclub platform.
+                    </p>
+                    
+                    <!-- Hero Component Mockup -->
+                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden border-2 border-red-600/30 mb-6">
+                        <!-- Component Header (Developer View) -->
+                        <div class="bg-red-600/20 px-4 py-2 border-b border-red-600/30">
+                            <code class="text-sm text-red-400">&lt;Hero /&gt; Component</code>
+                        </div>
+                        
+                        <!-- Component Body -->
+                        <div class="p-6 bg-gradient-to-br from-black/50 to-gray-900">
+                            <div class="text-center">
+                                <h4 class="text-4xl md:text-5xl font-bold text-white mb-4">Laced in Lust</h4>
+                                <p class="text-xl text-gray-300 mb-6">The Ultimate VRChat Nightclub Experience</p>
+                                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                                    <button class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                                        View Events
+                                    </button>
+                                    <button class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+                                        Meet Our Staff
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- StaffCard Component Mockup -->
+                    <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden border-2 border-red-600/30">
+                        <!-- Component Header (Developer View) -->
+                        <div class="bg-red-600/20 px-4 py-2 border-b border-red-600/30">
+                            <code class="text-sm text-red-400">&lt;StaffCard /&gt; Component</code>
+                        </div>
+                        
+                        <!-- Component Body -->
+                        <div class="p-6">
+                            <div class="flex flex-col md:flex-row gap-6">
+                                <!-- Staff Avatar -->
+                                <div class="flex-shrink-0">
+                                    <div class="w-32 h-32 bg-gradient-to-br from-red-600/40 to-purple-600/40 rounded-lg flex items-center justify-center border-2 border-red-600/30">
+                                        <span class="text-white font-semibold text-xl">SM</span>
+                                    </div>
+                                </div>
+                                
+                                <!-- Staff Details -->
+                                <div class="flex-1">
+                                    <h4 class="text-2xl font-bold text-white mb-2">Sarah Martinez</h4>
+                                    <p class="text-red-400 font-semibold mb-2">Head Dancer • DJ</p>
+                                    <p class="text-gray-400 mb-4">Featured performer with 5+ years experience. Specializes in electronic dance and club performances.</p>
+                                    
+                                    <!-- Dynamic Status (React State) -->
+                                    <div class="mb-4">
+                                        <div class="flex items-center gap-2">
+                                            <span class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
+                                            <span class="text-sm text-gray-300">
+                                                <strong>Status:</strong> <span class="text-green-400 font-semibold">Online Now</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Dynamic Data (React Props) -->
+                                    <div class="flex gap-2 mb-4">
+                                        <span class="bg-red-600/30 text-red-300 px-3 py-1 rounded-full text-sm">Featured</span>
+                                        <span class="bg-yellow-600/30 text-yellow-300 px-3 py-1 rounded-full text-sm">VIP</span>
+                                        <span class="bg-blue-600/30 text-blue-300 px-3 py-1 rounded-full text-sm">DJ</span>
+                                    </div>
+                                    
+                                    <!-- Interactive Elements -->
+                                    <div class="flex gap-3 mb-4">
+                                        <button class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
+                                            View Profile
+                                        </button>
+                                        <button class="bg-gray-700 hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-lg transition duration-200">
+                                            Schedule
+                                        </button>
+                                    </div>
+                                    
+                                    <!-- Component Props Display -->
+                                    <div class="mt-6 pt-4 border-t border-gray-700">
+                                        <p class="text-xs text-gray-500 mb-2">Component Props (React Principles):</p>
+                                        <div class="bg-gray-900 rounded p-3 font-mono text-xs border border-gray-700">
+                                            <div class="text-gray-300">
+                                                <span class="text-red-400">staff</span>: <span class="text-blue-400">Object</span> &#123;<br/>
+                                                &nbsp;&nbsp;name: <span class="text-green-400">"Sarah Martinez"</span>,<br/>
+                                                &nbsp;&nbsp;role: <span class="text-green-400">"Head Dancer"</span>,<br/>
+                                                &nbsp;&nbsp;status: <span class="text-blue-400">"online"</span>,<br/>
+                                                &nbsp;&nbsp;tags: <span class="text-blue-400">["Featured", "VIP", "DJ"]</span>,<br/>
+                                                &nbsp;&nbsp;onViewProfile: <span class="text-red-400">Function</span><br/>
+                                                &#125;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- React Principles Explanation -->
+                    <div class="mt-6 bg-gray-800 rounded-lg shadow-md p-6 border-l-4 border-red-600 border-t border-r border-b border-gray-700">
+                        <h5 class="font-semibold text-white mb-3">React Development Principles Demonstrated:</h5>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span><strong>Component Reusability:</strong> Single StaffCard component renders all staff members with dynamic data</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span><strong>Props Handling:</strong> Dynamic staff data passed via props (name, role, status, tags)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span><strong>State Management:</strong> Component manages online status and interactive elements</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span><strong>Dynamic Rendering:</strong> Real-time display of staff availability and role badges</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-400 mr-2">•</span>
+                                <span><strong>Event Handling:</strong> Interactive buttons demonstrate onClick event management for profile views</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -601,6 +1159,99 @@
                 logIndex = 0;
             }
         }, 3000);
+
+        // Modal functionality for Dashboard Demo
+        const dashboardModal = document.getElementById('dashboard-modal');
+        const launchDashboardBtn = document.getElementById('launch-dashboard-demo');
+        const closeDashboardBtn = document.getElementById('close-dashboard-modal');
+
+        launchDashboardBtn.addEventListener('click', function() {
+            dashboardModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        closeDashboardBtn.addEventListener('click', function() {
+            dashboardModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+
+        // Close modal when clicking outside
+        dashboardModal.addEventListener('click', function(e) {
+            if (e.target === dashboardModal) {
+                dashboardModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !dashboardModal.classList.contains('hidden')) {
+                dashboardModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Dashboard tab navigation functionality
+        const dashboardNavItems = dashboardModal.querySelectorAll('.dashboard-nav-item');
+        const dashboardContents = dashboardModal.querySelectorAll('.dashboard-content');
+
+        dashboardNavItems.forEach(item => {
+            item.addEventListener('click', function() {
+                const targetTab = this.getAttribute('data-tab');
+                
+                // Remove active state from all nav items
+                dashboardNavItems.forEach(nav => {
+                    nav.classList.remove('bg-blue-600', 'font-semibold');
+                    nav.classList.add('hover:bg-gray-700');
+                });
+                
+                // Add active state to clicked item
+                this.classList.add('bg-blue-600', 'font-semibold');
+                this.classList.remove('hover:bg-gray-700');
+                
+                // Hide all content sections
+                dashboardContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                
+                // Show selected content section
+                const targetContent = dashboardModal.querySelector(`[data-content="${targetTab}"]`);
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                }
+            });
+        });
+
+        // Modal functionality for React Demo
+        const reactModal = document.getElementById('react-modal');
+        const launchReactBtn = document.getElementById('launch-react-demo');
+        const closeReactBtn = document.getElementById('close-react-modal');
+
+        launchReactBtn.addEventListener('click', function() {
+            reactModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+
+        closeReactBtn.addEventListener('click', function() {
+            reactModal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        });
+
+        // Close modal when clicking outside
+        reactModal.addEventListener('click', function(e) {
+            if (e.target === reactModal) {
+                reactModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !reactModal.classList.contains('hidden')) {
+                reactModal.classList.add('hidden');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
 </html>
